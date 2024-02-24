@@ -4,13 +4,13 @@ import sidebar from "./sidebar";
 
 export default hopeTheme({
   // 主题选项：https://theme-hope.vuejs.press/zh/config/theme/layout.html
-  hostname: "https://newzone.top",
+  hostname: "https://zerp-work.github.io",
 
   iconAssets: "iconfont",
 
   author: {
-    name: "清顺",
-    url: "https://newzone.top",
+    name: "lzzie",
+    url: "https://zerp-work.github.io",
   },
 
   logo: "/logo.svg",
@@ -54,7 +54,7 @@ export default hopeTheme({
   // sidebarSorter: ['readme', 'order', 'title'],
 
   // copyright 默认为 Copyright © <作者>
-  copyright: `Copyright © 2023-present <a href="https://newzone.top/" target="_blank" rel="noopener noreferrer">LearnData 开源笔记</a>`,
+  copyright: `Copyright © 2023-present <a href="https://zerp-work.github.io" target="_blank" rel="noopener noreferrer">LearnData 开源笔记</a>`,
   displayFooter: true,
   // 页脚，支持使用 HTMLString 以显示备案信息等
   // footer: `MIT Licensed`,
@@ -65,13 +65,13 @@ export default hopeTheme({
   // 主题功能选项：https://theme-hope.vuejs.press/zh/config/theme/feature.html
   blog: {
     articleInfo: ["Date", "PageView", "Category", "Tag", "ReadingTime"],
-    name: "清顺",
+    name: "lzzie",
     avatar: "/avatar_self.webp",
     description: "迷信新工具，热衷于研究开源软件、心理学理论，定期分享探索成果",
     intro: "/intro.html",
     roundAvatar: true,
     medias: {
-      GitHub: "https://github.com/rockbenben",
+      GitHub: "https://zerp-work.github.io",
       Zhihu: "https://www.zhihu.com/people/qingwhat",
       少数派: ["https://sspai.com/u/zqj05i4v/posts", "./docs/.vuepress/icons/sspai.svg"],
       Wechat: "https://img.newzone.top/wechat.svg",
