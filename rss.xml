@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://newzone.top/rss.xsl"?>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="https://zerp-work.github.io/rss.xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <atom:link href="https://newzone.top/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://zerp-work.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <title>LearnData-开源笔记</title>
-    <link>https://newzone.top/</link>
+    <link>https://zerp-work.github.io/</link>
     <description>开源工具、效率方法、心理学探索的自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 24 Feb 2024 14:26:01 GMT</pubDate>
-    <lastBuildDate>Sat, 24 Feb 2024 14:26:01 GMT</lastBuildDate>
+    <pubDate>Sat, 24 Feb 2024 15:16:13 GMT</pubDate>
+    <lastBuildDate>Sat, 24 Feb 2024 15:16:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>工具</category>
@@ -17,9 +17,9 @@
     <category>服务器</category>
     <item>
       <title>跳过第三方软件，一步到位实现微信双开的秘密</title>
-      <link>https://newzone.top/posts/2017-04-18-wechat_multi_open.html</link>
-      <guid>https://newzone.top/posts/2017-04-18-wechat_multi_open.html</guid>
-      <source url="https://newzone.top/rss.xml">跳过第三方软件，一步到位实现微信双开的秘密</source>
+      <link>https://zerp-work.github.io/posts/2017-04-18-wechat_multi_open.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-04-18-wechat_multi_open.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">跳过第三方软件，一步到位实现微信双开的秘密</source>
       <description>由于工作需要，我经常在电脑上同时登录多个微信账号。然而，微信规定一个客户端仅能登录一个账号，这导致我不得不同时使用 PC 端和网页版，显著降低了操作效率。随着「微信 For Windows」和「微信 UWP」版本的停用，我们曾依赖的多客户端策略变得几乎无效了。如果你之前安装了旧版的微信 UWP，好好珍惜吧。 要在不使用第三方软件的情况下实现微信的多开，...</description>
       <category>工具</category>
       <pubDate>Tue, 18 Apr 2017 00:00:00 GMT</pubDate>
@@ -54,9 +54,9 @@ start <span class="token string">"WeChat"</span> <span class="token string">"C:\
     </item>
     <item>
       <title>RSS 入门篇：Feed43&amp;FeedEx-为静态网页定制 RSS 源</title>
-      <link>https://newzone.top/posts/2017-04-22-rss_feed43_feedex.html</link>
-      <guid>https://newzone.top/posts/2017-04-22-rss_feed43_feedex.html</guid>
-      <source url="https://newzone.top/rss.xml">RSS 入门篇：Feed43&amp;FeedEx-为静态网页定制 RSS 源</source>
+      <link>https://zerp-work.github.io/posts/2017-04-22-rss_feed43_feedex.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-04-22-rss_feed43_feedex.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">RSS 入门篇：Feed43&amp;FeedEx-为静态网页定制 RSS 源</source>
       <description>迷上 IFTTT 等自动化应用后，我需要为各种不同的网页定制 RSS 源。其中，最容易入门的工具是 FEED43。本文是一篇介绍如何使用 FEED43 定制 RSS 源的入门指南。 ► 开始烧制属于自己的 feed 1. 进入网页 FEED43 不需要注册，点击「Create your own feed」即可使用。 2. 选定 RSS 网页 在「Ste...</description>
       <category>自动化</category>
       <pubDate>Sat, 22 Apr 2017 12:54:00 GMT</pubDate>
@@ -138,9 +138,9 @@ start <span class="token string">"WeChat"</span> <span class="token string">"C:\
     </item>
     <item>
       <title>office 2016 安装程序报错解决办法</title>
-      <link>https://newzone.top/posts/2017-07-28-office_2016_installer_error.html</link>
-      <guid>https://newzone.top/posts/2017-07-28-office_2016_installer_error.html</guid>
-      <source url="https://newzone.top/rss.xml">office 2016 安装程序报错解决办法</source>
+      <link>https://zerp-work.github.io/posts/2017-07-28-office_2016_installer_error.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-07-28-office_2016_installer_error.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">office 2016 安装程序报错解决办法</source>
       <description>重新安装 Office 系统或更改安装组件时，经常提示：「找不到有效的安装源」，但实际这些文件都能在安装包内找到。这是由于注册表和组件而导致的报错，「找不到有效的安装源」并不是真实原因，解决方法查看下方。 解决方法 打开 regedit.exe，在注册表中找到路径 计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Of...</description>
       <category>系统</category>
       <pubDate>Fri, 28 Jul 2017 11:02:00 GMT</pubDate>
@@ -181,9 +181,9 @@ MSOCache 其它的目录下内容同样根据注册表的内容把它指示的�
     </item>
     <item>
       <title>OneNote 2016 无法登陆问题解决</title>
-      <link>https://newzone.top/posts/2017-07-29-onenote_2016_cannot_be_logged_in.html</link>
-      <guid>https://newzone.top/posts/2017-07-29-onenote_2016_cannot_be_logged_in.html</guid>
-      <source url="https://newzone.top/rss.xml">OneNote 2016 无法登陆问题解决</source>
+      <link>https://zerp-work.github.io/posts/2017-07-29-onenote_2016_cannot_be_logged_in.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-07-29-onenote_2016_cannot_be_logged_in.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">OneNote 2016 无法登陆问题解决</source>
       <description>OneNote 安装后，提示输入账号，但点击「下一步」始终没反应，无法进行登陆。 打开 IE 浏览器，访问 live.com，如果网页提示「登录需要启动 JavaScript」，说明问题的根源出在 IE 的设置上。 点击「IE 设置」&amp;gt;「Internet 选项」&amp;gt;「安全」&amp;gt;「自定义级别」，然后启用脚本选项的「Java 小程序脚本」和「活动脚本」。 完成...</description>
       <category>系统</category>
       <pubDate>Sat, 29 Jul 2017 15:19:00 GMT</pubDate>
@@ -201,9 +201,9 @@ MSOCache 其它的目录下内容同样根据注册表的内容把它指示的�
     </item>
     <item>
       <title>电脑关机了，第二天一看确又开着的？让系统正常关机！</title>
-      <link>https://newzone.top/posts/2017-09-02-forced_shutdown.html</link>
-      <guid>https://newzone.top/posts/2017-09-02-forced_shutdown.html</guid>
-      <source url="https://newzone.top/rss.xml">电脑关机了，第二天一看确又开着的？让系统正常关机！</source>
+      <link>https://zerp-work.github.io/posts/2017-09-02-forced_shutdown.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-09-02-forced_shutdown.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">电脑关机了，第二天一看确又开着的？让系统正常关机！</source>
       <description>晚上明明按下电脑的关机键，第二天早上却发现电脑开了一晚上？这是因为后台和 GUI 应用程序在阻止或取消关机，使得系统无法正常关机。为解决此问题，可以按照以下方法授予系统自动关机权限。 手工操作 点击「开始菜单」，搜索「Regedit」，进入注册表编辑器。 打开窗口后，向注册表上方菜单输入路径 计算机\HKEY_CURRENT_USER\Control ...</description>
       <category>系统</category>
       <pubDate>Sat, 02 Sep 2017 00:38:00 GMT</pubDate>
@@ -266,9 +266,9 @@ cmd <span class="token operator">/</span>c reg add <span class="token string">"H
     </item>
     <item>
       <title>加速 SMB 协议，让 PC 变身小型 NAS</title>
-      <link>https://newzone.top/posts/2017-09-03-smb_lan_sharing.html</link>
-      <guid>https://newzone.top/posts/2017-09-03-smb_lan_sharing.html</guid>
-      <source url="https://newzone.top/rss.xml">加速 SMB 协议，让 PC 变身小型 NAS</source>
+      <link>https://zerp-work.github.io/posts/2017-09-03-smb_lan_sharing.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-09-03-smb_lan_sharing.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">加速 SMB 协议，让 PC 变身小型 NAS</source>
       <description>Windows 系统开启 SMB 协议： 打开「控制面板」窗口，在「类别」查看方式下单击「程序」。 打开「程序」窗口，单击「启用或关闭 windows 功能」。 打开「windows 功能」窗口，勾选 SMB 直通。 勾选「远程差分压缩 API 支持」。 网上很多教程都要求关闭“远程差分压缩”复选框，这是对“远程差分压缩”的误解。 官方解释：远程差分压...</description>
       <category>系统</category>
       <pubDate>Sun, 03 Sep 2017 20:57:00 GMT</pubDate>
@@ -298,9 +298,9 @@ cmd <span class="token operator">/</span>c reg add <span class="token string">"H
     </item>
     <item>
       <title>光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2)</title>
-      <link>https://newzone.top/posts/2017-10-18-light_cat_e8-c-epon_admin.html</link>
-      <guid>https://newzone.top/posts/2017-10-18-light_cat_e8-c-epon_admin.html</guid>
-      <source url="https://newzone.top/rss.xml">光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2)</source>
+      <link>https://zerp-work.github.io/posts/2017-10-18-light_cat_e8-c-epon_admin.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-10-18-light_cat_e8-c-epon_admin.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2)</source>
       <description>为什么要获得光猫超级密码？ 它可以用于端口映射（eMule high ID）和桥接模式（路由器掌控拨号，但不兼容固定电话）。网上关于光猫超级密码的获取攻略大多是在 2012-14 年发布的，现在已经不能使用了。 破解测试环境 运营商：上海电信 光猫型号：贝尔 E8-C-EPON 硬件版本：RG201O-CA_V1A2 软件版本：E201OCAA2V11...</description>
       <category>网络</category>
       <pubDate>Wed, 18 Oct 2017 18:28:00 GMT</pubDate>
@@ -335,9 +335,9 @@ cmd <span class="token operator">/</span>c reg add <span class="token string">"H
     </item>
     <item>
       <title>光猫改造 篇二：光猫 + 路由器，实现端口映射</title>
-      <link>https://newzone.top/posts/2017-10-18-light_cat_port_forwarding.html</link>
-      <guid>https://newzone.top/posts/2017-10-18-light_cat_port_forwarding.html</guid>
-      <source url="https://newzone.top/rss.xml">光猫改造 篇二：光猫 + 路由器，实现端口映射</source>
+      <link>https://zerp-work.github.io/posts/2017-10-18-light_cat_port_forwarding.html</link>
+      <guid>https://zerp-work.github.io/posts/2017-10-18-light_cat_port_forwarding.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">光猫改造 篇二：光猫 + 路由器，实现端口映射</source>
       <description>光猫默认没有管理权限，需要先获得光猫的超管密码，参考光猫改造 篇一：超级管理员密码破解（E8-C-EPON RG201O-CA_V1A2）。 光猫端口映射步骤： 登陆光猫管理地址 192.168.1.1，应用 → 高级 NAT 设置 →DMZ 设置，启用 DMZ 主机绑定路由器地址（路由器 WAN 口 IP 地址 -192.168.1.X) 登陆路由器...</description>
       <category>网络</category>
       <pubDate>Wed, 18 Oct 2017 22:00:00 GMT</pubDate>
@@ -363,9 +363,9 @@ cmd <span class="token operator">/</span>c reg add <span class="token string">"H
     </item>
     <item>
       <title>小型网站管理员，快放弃 CDN！</title>
-      <link>https://newzone.top/posts/2018-01-19-forget_the_cdn.html</link>
-      <guid>https://newzone.top/posts/2018-01-19-forget_the_cdn.html</guid>
-      <source url="https://newzone.top/rss.xml">小型网站管理员，快放弃 CDN！</source>
+      <link>https://zerp-work.github.io/posts/2018-01-19-forget_the_cdn.html</link>
+      <guid>https://zerp-work.github.io/posts/2018-01-19-forget_the_cdn.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">小型网站管理员，快放弃 CDN！</source>
       <description> CDN 的全称是 Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN 系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合...</description>
       <category>服务器</category>
       <pubDate>Fri, 19 Jan 2018 12:00:00 GMT</pubDate>
@@ -388,9 +388,9 @@ cmd <span class="token operator">/</span>c reg add <span class="token string">"H
     </item>
     <item>
       <title>雇个机器人帮你干活</title>
-      <link>https://newzone.top/posts/2018-01-31-hire_a_robot.html</link>
-      <guid>https://newzone.top/posts/2018-01-31-hire_a_robot.html</guid>
-      <source url="https://newzone.top/rss.xml">雇个机器人帮你干活</source>
+      <link>https://zerp-work.github.io/posts/2018-01-31-hire_a_robot.html</link>
+      <guid>https://zerp-work.github.io/posts/2018-01-31-hire_a_robot.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">雇个机器人帮你干活</source>
       <description> 机器人会取代你工作！ 计算云会取代你工作！ AI 会取代你的工作！ 我相信科技终究有一天会消灭所有工作，但我们这代人的无奈就是很难等到这一天。 作为懒人、宅男，等不及了怎么办？ 既然还没被取代，那就雇个机器人帮你干活！ 我每天第一件事是去各个网站看热门新闻、行业资料。以前是用 RSS，但 RSS 被视为落后，越来越多的网站不再提供 RSS 源。离开 ...</description>
       <category>自动化</category>
       <pubDate>Wed, 31 Jan 2018 22:51:00 GMT</pubDate>
