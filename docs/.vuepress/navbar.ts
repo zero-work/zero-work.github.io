@@ -38,7 +38,7 @@ export default navbar([
     text: "生活",
     icon: "emmet",
     prefix: "/family/",
-    children: ["Diet", "Shoppinglist", "Coupon", "baby/"],
+    children: ["Diet", "Shoppinglist", "Coupon"],
   },
   {
     text: "工具",
