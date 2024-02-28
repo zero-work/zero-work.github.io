@@ -132,8 +132,8 @@ export default hopeTheme({
       repoId: "R_kgDOHdfk6Q",
       category: "Comments",
       categoryId: "DIC_kwDOHdfk6c4CQYNn",
-      */
-    },
+      
+    },*/
 
     // 组件库
     components: {
