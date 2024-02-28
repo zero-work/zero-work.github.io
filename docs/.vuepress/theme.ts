@@ -87,10 +87,13 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
+    // 禁用讨论模块，暂无可替代
     // 评论配置（仅做样例，记得更换）
+    /*
     comment: {
       // 在本地运行 `pnpm docs:dev` 并使用非 localhost 域名时，容易出现 403 错误，移除本部分即可解决
       provider: "Waline",
+    
       serverURL: "https://waline.newzone.top",
       reaction: [
         "https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/twemoji/13.1.0/72x72/1f44d.png",
@@ -120,6 +123,7 @@ export default hopeTheme({
           level5: "化神",
         },
       },
+      */
 
       // Giscus 备用配置
       /*
@@ -160,16 +164,18 @@ export default hopeTheme({
     },
 
     // Algolia 全文搜索：需要自己设置爬虫并生成下方配置，如不会自己设置，启用下方本地搜索
+    /*
     docsearch: {
       indexName: "newzone",
       appId: "M4EXXEZIEG",
       apiKey: "fd8891a9c4cc21e0ef4f11bf44f7a11e",
     },
+    */
     // 本地搜索，和上方二选一
-    /* searchPro: {
+    searchPro: {
       // 索引全部内容
       indexContent: true,
-    }, */
+    },
 
     feed: {
       rss: true,
