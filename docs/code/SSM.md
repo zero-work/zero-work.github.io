@@ -73,3 +73,65 @@ public class JavaConfig{
  @AfterThrowing  // 定义异常通知
  @After  // 定义后置最终通知
 ```
+**实例代码**
+```java
+// 使用Repository注解写好Dao层与DaoImpl层
+
+// 定义切面类
+@Aspect  // @Aspect声明一个切面
+@Component  // @Component 设置当前类被Spring管理为Bean
+public class MyAspect {
+    @Pointcut("execution(* aspect.dap.*.(..))")   // （）内的是切入点表达式，匹配包中任意方法的执行
+/*
+execution( )  // 表示式主体
+*  // 返回类型 *代表所有类型
+aspect.dao  // 需要匹配的包名
+*.*  // 第一个*代表包下所有类，第二个代表类下所有方法
+（..）  // 表示方法的参数，.. 代表了所有参数
+*/
+private void myPointcut(){...}
+
+// 前置通知 使用Jpinpoint接口作为参数获取目标对象信息
+@Before("myPointcut()")  // myPointcut()是切入点的定义方法
+public void before(JoinPoint jp){...}
+
+// 后置通知
+@AfterReturning("myPointcut()")
+public void afterReturning(JoinPoint jp){...}
+
+/*
+环绕通知
+ProceedingJoinPoint 是JoinPoint子接口  代表可以执行的目标方法
+返回值必须为Object
+必须一个参数是ProceedingJoinPoint类型
+必须throws Throwable
+*/
+@Around("myPointcut()")
+public Object around(ProceedingJoinPoint pjp) throws Throwable{...}
+
+// 异常通知
+AfterThrowing(value="myPointcut()" ,throwing = "e")
+public void except(Throwable e){...}
+
+// 后置最终通知
+@After("myPointcut()")
+public void after(){...}
+}
+
+
+
+// 设置aspectj的配置类
+
+@Configuration  // 声明配置类
+@ComponentScan("aspectj")  // 自动扫描aspectj包下的注解
+@EnableAspectJAutoProxy  // 开启spring对AspectJ的支持
+
+public class AspectJAOPConfig{...}
+
+// 测试类
+main(){
+    AnnotationConfigApplication appCon= new AnnotationConfigApplicationContext(AspectJAOPConfig.class);
+    TestDao testDao = appCon.getBean(TestDao.class);
+    // 下面正常调用方法即可
+}
+```

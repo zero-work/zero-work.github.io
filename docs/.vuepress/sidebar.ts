@@ -109,7 +109,7 @@ export default sidebar({
               text: "FrondEnd",
               icon: "app",
               collapsible: true,
-              children: ["Vue.md", "HTML.md", "JavaScript.md", "Python.md"],
+              children: ["Vue.md", "HTML.md", "Javascript.md", "Python.md", "SSM.md"],
             },
           ],
         },
