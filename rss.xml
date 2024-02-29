@@ -6,8 +6,8 @@
     <link>https://zerp-work.github.io/</link>
     <description>开源工具、效率方法、心理学探索的自我提升笔记，记录并输出一切能让自己提升的知识。</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 28 Feb 2024 13:21:59 GMT</pubDate>
-    <lastBuildDate>Wed, 28 Feb 2024 13:21:59 GMT</lastBuildDate>
+    <pubDate>Thu, 29 Feb 2024 13:02:57 GMT</pubDate>
+    <lastBuildDate>Thu, 29 Feb 2024 13:02:57 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>工具</category>
@@ -15,6 +15,156 @@
     <category>系统</category>
     <category>网络</category>
     <category>服务器</category>
+    <item>
+      <title>SSM框架</title>
+      <link>https://zerp-work.github.io/code/SSM.html</link>
+      <guid>https://zerp-work.github.io/code/SSM.html</guid>
+      <source url="https://zerp-work.github.io/rss.xml">SSM框架</source>
+      <description>SSM框架 Spring IOC Spring 常用注解 1.声明Bean注解 @Component:用于表示Bean对象，可以在任何层下使用 @Repository:用于数据层（Dao）的类表示为Bean对象 @Service:用于业务逻辑层（Service）的类表示为Bean对象 @Controller:用于控制器组件类（Controller） 2...</description>
+      <pubDate>Thu, 29 Feb 2024 13:01:30 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>Spring IOC</h2>
+<h3>Spring 常用注解</h3>
+<p>1.声明Bean注解</p>
+<ul>
+<li>@Component:用于表示Bean对象，可以在任何层下使用</li>
+<li>@Repository:用于数据层（Dao）的类表示为Bean对象</li>
+<li>@Service:用于业务逻辑层（Service）的类表示为Bean对象</li>
+<li>@Controller:用于控制器组件类（Controller）</li>
+</ul>
+<p>2.注入Bean的注解 （对于变量、方法、构造方法进行标注，完成自动装配的工作）</p>
+<ul>
+<li>@Autowired：默认按照Bean的类型进行装配</li>
+<li>@Resource：默认按照名称来装配</li>
+<li>@Qualifier：与@Autowired注解配合使用，当使用Autowired需要按照名称来装配时，就需要跟Qualifier注解一起使用。</li>
+</ul>
+<h3>基于注解的依赖注解</h3>
+<p><strong>Spring Ioc容器负责创建和注入Bean。Spring提供使用XML配置、注解、Java配置以及groovy配置实现Bean的创建和注入。</strong></p>
+<ul>
+<li>@Repository("[Dao实现类]")</li>
+<li>@Service("[Service实现类]")</li>
+<li>@Controller  <strong>Controller类名上</strong></li>
+<li>@Configuration  <strong>声明当前类是一个配置类，相当于Spring中的XMl配置文件</strong>
+@ComponentScan("[包名]") <strong>自动扫描包名下的注解，并注册为Bean</strong>
+<em>相当于Spring中XML配置中的&lt;context：component-scan base-package="Bean所在包路径"&gt;</em></li>
+</ul>
+<h3>Java配置</h3>
+<p><em>Dao、Service、Controller层都不需要使用注解</em></p>
+<ul>
+<li>创建配置类</li>
+</ul>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JavaConfig</span><span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">TestDao</span> <span class="token function">getTestDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">TestDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">TestService</span> <span class="token function">getTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">TestService</span> ts <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 使用set方法注入testDao</span>
+        ts<span class="token punctuation">.</span><span class="token function">setTestDao</span><span class="token punctuation">(</span><span class="token function">getTestDao</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> ts<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">TestController</span> <span class="token function">getTestController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">TestController</span> tc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 使用set方法注入</span>
+        tc<span class="token punctuation">.</span><span class="token function">getTestService</span><span class="token punctuation">(</span> <span class="token function">getTestService</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> tc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2>Spring AOP</h2>
+<p><strong>提供了面向切面编程实现，多用于在事务处理、日志记录、安全控制等操作中被广泛使用。</strong></p>
+<h4>AOP术语</h4>
+<ul>
+<li>切面：封装横切到系统功能的类</li>
+<li>连接点：程序运行中的一些时间点，如方法的调用或者异常的抛出。</li>
+<li>切入点：那些需要进行处理的连接点</li>
+<li>通知：由切面添加到特定的连接点的一段代码（通知是切面的具体实现）</li>
+<li>引入：允许在现有的实现类中添加自定义方法和属性</li>
+<li>目标对象：所有被通知的对象</li>
+<li>代理：通知应用到目标对象之后，被动态创建的对象</li>
+<li>织入：将切面代码插入到目标对象上，从而生成代理对象的过程</li>
+</ul>
+<h3>基于注解开发AspectJ</h3>
+<ul>
+<li>环绕通知：在目标方法执行前和执行后实施增强的，可以用于日志记录、事务处理等</li>
+<li>前置通知：在目标方法前实施增强的，用于权限管理</li>
+<li>后置返回通知：目标方法成功执行后实施增强的，可以用于关闭流、删除临时文件等</li>
+<li>后置最终通知：目标方法执行后实施增强的，不管方法是否执行成功，用于释放资源</li>
+<li>异常通知：方法抛出异常后实施增强的，用于处理异常、记录日志等</li>
+<li>引入通知：在目标类中添加一些新的方法或者属性，用于修改目标类</li>
+</ul>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code> <span class="token annotation punctuation">@Aspect</span>  <span class="token comment">// 定义一个切面，注解在切面类上</span>
+ <span class="token annotation punctuation">@Pointcut</span>  <span class="token comment">// 用于定义切入点表达式</span>
+ <span class="token annotation punctuation">@Before</span>  <span class="token comment">// 定义前置通知</span>
+ <span class="token annotation punctuation">@AfterReturning</span>  <span class="token comment">// 定义后置返回通知</span>
+ <span class="token annotation punctuation">@Around</span>  <span class="token comment">// 定义环绕通知</span>
+ <span class="token annotation punctuation">@AfterThrowing</span>  <span class="token comment">// 定义异常通知</span>
+ <span class="token annotation punctuation">@After</span>  <span class="token comment">// 定义后置最终通知</span>
+</code></pre></div><p><strong>实例代码</strong></p>
+<div class="language-java" data-ext="java" data-title="java"><pre class="language-java"><code><span class="token comment">// 使用Repository注解写好Dao层与DaoImpl层</span>
+
+<span class="token comment">// 定义切面类</span>
+<span class="token annotation punctuation">@Aspect</span>  <span class="token comment">// @Aspect声明一个切面</span>
+<span class="token annotation punctuation">@Component</span>  <span class="token comment">// @Component 设置当前类被Spring管理为Bean</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyAspect</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Pointcut</span><span class="token punctuation">(</span><span class="token string">"execution(* aspect.dap.*.(..))"</span><span class="token punctuation">)</span>   <span class="token comment">// （）内的是切入点表达式，匹配包中任意方法的执行</span>
+<span class="token comment">/*
+execution( )  // 表示式主体
+*  // 返回类型 *代表所有类型
+aspect.dao  // 需要匹配的包名
+*.*  // 第一个*代表包下所有类，第二个代表类下所有方法
+（..）  // 表示方法的参数，.. 代表了所有参数
+*/</span>
+<span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">myPointcut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 前置通知 使用Jpinpoint接口作为参数获取目标对象信息</span>
+<span class="token annotation punctuation">@Before</span><span class="token punctuation">(</span><span class="token string">"myPointcut()"</span><span class="token punctuation">)</span>  <span class="token comment">// myPointcut()是切入点的定义方法</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">before</span><span class="token punctuation">(</span><span class="token class-name">JoinPoint</span> jp<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 后置通知</span>
+<span class="token annotation punctuation">@AfterReturning</span><span class="token punctuation">(</span><span class="token string">"myPointcut()"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterReturning</span><span class="token punctuation">(</span><span class="token class-name">JoinPoint</span> jp<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">/*
+环绕通知
+ProceedingJoinPoint 是JoinPoint子接口  代表可以执行的目标方法
+返回值必须为Object
+必须一个参数是ProceedingJoinPoint类型
+必须throws Throwable
+*/</span>
+<span class="token annotation punctuation">@Around</span><span class="token punctuation">(</span><span class="token string">"myPointcut()"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">around</span><span class="token punctuation">(</span><span class="token class-name">ProceedingJoinPoint</span> pjp<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 异常通知</span>
+<span class="token class-name">AfterThrowing</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"myPointcut()"</span> <span class="token punctuation">,</span>throwing <span class="token operator">=</span> <span class="token string">"e"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">except</span><span class="token punctuation">(</span><span class="token class-name">Throwable</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 后置最终通知</span>
+<span class="token annotation punctuation">@After</span><span class="token punctuation">(</span><span class="token string">"myPointcut()"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">after</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token comment">// 设置aspectj的配置类</span>
+
+<span class="token annotation punctuation">@Configuration</span>  <span class="token comment">// 声明配置类</span>
+<span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span><span class="token string">"aspectj"</span><span class="token punctuation">)</span>  <span class="token comment">// 自动扫描aspectj包下的注解</span>
+<span class="token annotation punctuation">@EnableAspectJAutoProxy</span>  <span class="token comment">// 开启spring对AspectJ的支持</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AspectJAOPConfig</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 测试类</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">AnnotationConfigApplication</span> appCon<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AnnotationConfigApplicationContext</span><span class="token punctuation">(</span><span class="token class-name">AspectJAOPConfig</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">TestDao</span> testDao <span class="token operator">=</span> appCon<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span><span class="token class-name">TestDao</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 下面正常调用方法即可</span>
+<span class="token punctuation">}</span>
+</code></pre></div>]]></content:encoded>
+    </item>
     <item>
       <title>跳过第三方软件，一步到位实现微信双开的秘密</title>
       <link>https://zerp-work.github.io/posts/2017-04-18-wechat_multi_open.html</link>
@@ -384,42 +534,6 @@ cmd <span class="token operator">/</span>c reg add <span class="token string">"H
 <p>第三次测试使用阿里云 DNS，分配杭州电信，网站正常</p>
 <p>后面两次虽然都能打开网站，但没有一个分配在上海电信，这种加速又能快多少呢？</p>
 <p>在网站<strong>配置足够、流量不大（日均访客 1000 以内）</strong> 时，不建议使用全站 CDN，这只会拖累访问体验。小网站只适合将图片部署在 CDN。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>雇个机器人帮你干活</title>
-      <link>https://zerp-work.github.io/posts/2018-01-31-hire_a_robot.html</link>
-      <guid>https://zerp-work.github.io/posts/2018-01-31-hire_a_robot.html</guid>
-      <source url="https://zerp-work.github.io/rss.xml">雇个机器人帮你干活</source>
-      <description> 机器人会取代你工作！ 计算云会取代你工作！ AI 会取代你的工作！ 我相信科技终究有一天会消灭所有工作，但我们这代人的无奈就是很难等到这一天。 作为懒人、宅男，等不及了怎么办？ 既然还没被取代，那就雇个机器人帮你干活！ 我每天第一件事是去各个网站看热门新闻、行业资料。以前是用 RSS，但 RSS 被视为落后，越来越多的网站不再提供 RSS 源。离开 ...</description>
-      <category>自动化</category>
-      <pubDate>Wed, 31 Jan 2018 22:51:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>机器人会取代你工作！
-计算云会取代你工作！
-AI 会取代你的工作！</p>
-</blockquote>
-<p>我相信科技终究有一天会消灭所有工作，但我们这代人的无奈就是很难等到这一天。</p>
-<p>作为懒人、宅男，等不及了怎么办？</p>
-<p>既然还没被取代，那就<strong>雇个机器人帮你干活</strong>！</p>
-<p>我每天第一件事是去各个网站看热门新闻、行业资料。以前是用 RSS，但 RSS 被视为落后，越来越多的网站不再提供 RSS 源。离开 RSS，我就一直没找到更合适的方法去将内容聚合起来，不得不在一个个网站间疲于奔命，逐渐不再看内容。</p>
-<blockquote>
-<p>RSS(Really Simple Syndication) 是一种描述和同步网站内容的格式，是使用最广泛的 XML 应用。简易信息聚合（也叫聚合内容）是一种 RSS 基于 XML 标准，在互联网上被广泛采用的内容包装和投递协议。</p>
-</blockquote>
-<ul class="task-list-container">
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> 增加 <code>Alfred</code> 搜索</label></li>
-</ul>
-<p><strong>直到遇到了我的第一个机器人雇员 <a href="https://github.com/huginn/huginn" target="_blank" rel="noopener noreferrer">Huginn</a></strong></p>
-<blockquote>
-<p>Huginn 是一个可以创建为你在线执行自动化任务的系统。Huginn 可以读取网页，监测事件并且执行符合你需求的动作。Huginn 通过 agents 创建并执行任务（事件流）。你可以将它看作是一个运行在你自己服务器上的 IFTTT 或 Zapier。</p>
-</blockquote>
-<p>Huginn 帮我将所有信息聚合成 RSS，24 小时帮我获取我要的内容。</p>
-<ul>
-<li><a href="http://news.163.com/rank" target="_blank" rel="noopener noreferrer">网易热门新闻</a>：抓取网易顶贴最多的 100 条新闻</li>
-<li><a href="http://top.baidu.com/buzz?b=1" target="_blank" rel="noopener noreferrer">百度实时热点</a>：实时更新每天的百度热点</li>
-<li><a href="https://www.guokr.com/" target="_blank" rel="noopener noreferrer">果壳网</a>：果壳首页推荐，官方更新速度较慢，刚好可以了解些奇思妙想</li>
-<li>工作类：梅花、SocialBeta、数英网、艾瑞网</li>
-</ul>
 ]]></content:encoded>
     </item>
   </channel>
